@@ -5,12 +5,12 @@ import CircuitPattern from "@/components/CircuitPattern";
 import ShieldIcon from "@/components/ShieldIcon";
 
 export const metadata: Metadata = {
-  title: "About Jamel Rainey — AI Security Leader",
+  title: "About Jamel Rainey — AI Security Engineer & Educator",
   description:
-    "Jamel Rainey is an AI Security Leader and the founder of AITrustAudit.com — the practitioner's resource for AI security auditing.",
+    "Jamel Rainey is an AI Security Engineer and the founder of AITrustAudit.com — the practitioner's learning platform for AI security engineering.",
   openGraph: {
     title: "About Jamel Rainey | AITrustAudit.com",
-    description: "AI Security Leader and founder of AITrustAudit.com — the practitioner's resource for AI security auditing.",
+    description: "AI Security Engineer and founder of AITrustAudit.com — the practitioner's learning platform for AI security engineering.",
   },
 };
 
@@ -26,19 +26,19 @@ const FRAMEWORKS = [
 
 const CONTENT = [
   {
-    icon: "🔍",
-    title: "What I Do",
-    body: "I conduct AI security audits for small and medium businesses — organizations that are using AI tools across their operations but haven't built the governance layer to manage the risk that comes with them. The deliverable is a professional audit report: clear findings, clear risk scores, and a prioritized list of exactly what to fix.",
+    icon: "🎓",
+    title: "What I Teach",
+    body: "I build practitioner-level courses and content for security professionals who need to add AI-specific skills to their toolkit. The flagship course — AI Security Audit Fundamentals — teaches the full 6-Domain methodology, from risk identification and vendor review through findings documentation and report writing.",
   },
   {
     icon: "📚",
     title: "Why AITrustAudit.com",
-    body: "When I started auditing AI systems, the resources I needed didn't exist. What was out there was either enterprise-scale (not useful for an SMB engagement) or purely academic (not useful for someone who has to produce an actual report on Monday morning). I built this site to be the resource I wish someone had handed me.",
+    body: "When I started working in AI security, the resources I needed didn't exist. What was out there was either enterprise-scale or purely academic — not useful for someone who has to do the actual work. I built this site to be the resource I wish someone had handed me when I started.",
   },
   {
     icon: "🎯",
-    title: "Who I Work With",
-    body: "SMB owners and operators who know they need to get their AI governance in order but don't have the internal expertise to know where to start. Security and GRC professionals who need to add AI-specific skills to their toolkit. Compliance teams whose existing frameworks don't cover LLMs and AI systems.",
+    title: "Who This Is For",
+    body: "Security practitioners adding AI to their threat model. GRC and compliance teams whose existing frameworks don't cover LLMs. Security engineers building or securing AI-powered systems. Anyone who needs to understand AI risk at a practitioner level — not just in theory.",
   },
 ];
 
@@ -56,10 +56,10 @@ export default function AboutPage() {
               Jamel Rainey
             </h1>
             <p className="font-display text-teal-lt text-lg font-semibold mb-6">
-              AI Security Leader · Founder, AITrustAudit.com
+              AI Security Engineer · Founder, AITrustAudit.com
             </p>
             <p className="font-body text-gray-300 text-lg leading-relaxed mb-6">
-              I audit AI deployments for businesses that are using AI tools without adequate governance — and I build the resources practitioners need to do the same work professionally.
+              I build the courses and practitioner resources that security professionals need to work confidently in AI security — from auditing AI deployments to engineering secure AI systems.
             </p>
             <p className="font-body text-gray-400 text-base leading-relaxed italic border-l-4 border-teal pl-4">
               &ldquo;80% of AI data leaks come from inside your organization. Your team is the threat vector. Let&rsquo;s fix that.&rdquo;
@@ -95,7 +95,7 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <p className="section-label mb-4">// FRAMEWORKS & STANDARDS</p>
           <h2 className="font-display text-white text-2xl font-bold mb-8">
-            Every Audit Is Grounded in the Standards That Matter
+            The Curriculum Is Grounded in the Standards That Matter
           </h2>
           <div className="flex flex-wrap justify-center gap-3">
             {FRAMEWORKS.map((f) => (
@@ -142,9 +142,9 @@ export default function AboutPage() {
           <h2 className="font-display text-navy text-2xl font-bold mb-6">Where to Start</h2>
           <div className="grid sm:grid-cols-3 gap-4">
             {[
+              { label: "The Course",         href: "/course",            desc: "8 modules, 35 lessons, certificate" },
               { label: "Free Risk Overview", href: "/free-risk-overview", desc: "5 risks explained, free PDF" },
               { label: "The Blog",           href: "/blog",              desc: "Frameworks, auditing, compliance" },
-              { label: "Book a Call",        href: "/audit",             desc: "Talk through your AI risk" },
             ].map((item) => (
               <Link
                 key={item.href}
@@ -160,9 +160,9 @@ export default function AboutPage() {
       </section>
 
       <CTABanner
-        headline="Let's Figure Out Your AI Risk Together"
-        subhead="Book a free 20-minute discovery call. No commitment. Just a straight conversation about where your AI exposure is."
-        primaryCTA={{ label: "Book a Free Discovery Call", href: "https://calendly.com" }}
+        headline="Ready to Build Your AI Security Skills?"
+        subhead="Start with the free risk overview or jump straight into the course — the practitioner-level resource built for the work you actually have to do."
+        primaryCTA={{ label: "Enroll in the Course", href: "/course" }}
         secondaryCTA={{ label: "Download Free Risk Overview", href: "/free-risk-overview" }}
       />
     </>

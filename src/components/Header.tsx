@@ -5,10 +5,9 @@ import Link from "next/link";
 import ShieldIcon from "./ShieldIcon";
 
 const nav = [
-  { label: "Audit Service", href: "/audit" },
-  { label: "Course",        href: "/course" },
-  { label: "Blog",          href: "/blog" },
-  { label: "About",         href: "/about" },
+  { label: "Course", href: "/course" },
+  { label: "Blog",   href: "/blog" },
+  { label: "About",  href: "/about" },
 ];
 
 export default function Header() {
@@ -58,14 +57,12 @@ export default function Header() {
           >
             Free Risk Overview
           </Link>
-          <a
-            href="https://calendly.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/course"
             className="bg-teal hover:bg-teal-lt text-white font-display font-bold text-xs px-4 py-2 rounded-lg tracking-wide transition-colors focus:outline-none focus:ring-2 focus:ring-teal-lt"
           >
-            Book Discovery Call
-          </a>
+            Enroll Now
+          </Link>
         </div>
 
         {/* Mobile menu button */}
@@ -111,14 +108,13 @@ export default function Header() {
             >
               Free Risk Overview
             </Link>
-            <a
-              href="https://calendly.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/course"
+              onClick={() => setMobileOpen(false)}
               className="block bg-teal text-white font-display font-bold text-xs text-center px-4 py-3 rounded-lg tracking-wide"
             >
-              Book Discovery Call
-            </a>
+              Enroll Now
+            </Link>
           </div>
         </nav>
       )}

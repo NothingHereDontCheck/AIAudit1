@@ -6,21 +6,21 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.aitrustaudit.com"),
   title: {
-    default: "AI Security Audit for SMBs | AITrustAudit.com",
+    default: "AI Security Engineering Learning Platform | AITrustAudit.com",
     template: "%s | AITrustAudit.com",
   },
   description:
-    "Professional AI security audit reports for small and medium businesses. Get a clear picture of your AI risk in 5 business days. Starting at $499.",
-  keywords: ["AI security audit", "AI risk assessment", "SMB AI security", "shadow AI", "AI compliance"],
+    "Practitioner-level courses, frameworks, and tools for AI security engineering. Built for security professionals, GRC teams, and engineers who have to do the actual work.",
+  keywords: ["AI security", "AI security engineering", "AI audit course", "LLM security", "AI risk", "shadow AI", "AI compliance"],
   authors: [{ name: "Jamel Rainey", url: "https://www.aitrustaudit.com/about" }],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.aitrustaudit.com",
     siteName: "AITrustAudit.com",
-    title: "AI Security Audit for SMBs | AITrustAudit.com",
+    title: "AI Security Engineering Learning Platform | AITrustAudit.com",
     description:
-      "Professional AI security audit reports for small and medium businesses. Get a clear picture of your AI risk in 5 business days. Starting at $499.",
+      "Practitioner-level courses, frameworks, and tools for AI security engineering. Built for security professionals, GRC teams, and engineers who have to do the actual work.",
     images: [
       {
         url: "/og-default.png",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Security Audit for SMBs | AITrustAudit.com",
+    title: "AI Security Engineering Learning Platform | AITrustAudit.com",
     description:
-      "Professional AI security audit reports for small and medium businesses. Starting at $499.",
+      "Practitioner-level courses and tools for AI security engineering. Built for professionals who have to do the actual work.",
     images: ["/og-default.png"],
   },
   icons: {

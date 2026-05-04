@@ -5,17 +5,10 @@ import ShieldIcon from "./ShieldIcon";
 import LeadMagnet from "./LeadMagnet";
 
 const links = {
-  Services: [
-    { label: "AI Security Audit",  href: "/audit" },
+  Learn: [
     { label: "Course",             href: "/course" },
-    { label: "Templates",          href: "/templates" },
-    { label: "Certification",      href: "/certification" },
-  ],
-  Resources: [
     { label: "Blog",               href: "/blog" },
     { label: "Free Risk Overview", href: "/free-risk-overview" },
-    { label: "Newsletter",         href: "/newsletter" },
-    { label: "Tools",              href: "/tools" },
   ],
   Company: [
     { label: "About Jamel Rainey", href: "/about" },
