@@ -6,9 +6,9 @@ import LeadMagnet from "./LeadMagnet";
 
 const links = {
   Learn: [
-    { label: "Course",             href: "/course" },
-    { label: "Blog",               href: "/blog" },
-    { label: "Free Risk Overview", href: "/free-risk-overview" },
+    { label: "Free Resources", href: "/resources" },
+    { label: "Course",         href: "/course" },
+    { label: "Blog",           href: "/blog" },
   ],
   Company: [
     { label: "About Jamel Rainey", href: "/about" },

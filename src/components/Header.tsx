@@ -5,9 +5,10 @@ import Link from "next/link";
 import ShieldIcon from "./ShieldIcon";
 
 const nav = [
-  { label: "Course", href: "/course" },
-  { label: "Blog",   href: "/blog" },
-  { label: "About",  href: "/about" },
+  { label: "Free Resources", href: "/resources" },
+  { label: "Course",         href: "/course" },
+  { label: "Blog",           href: "/blog" },
+  { label: "About",          href: "/about" },
 ];
 
 export default function Header() {
@@ -52,12 +53,6 @@ export default function Header() {
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
           <Link
-            href="/free-risk-overview"
-            className="font-body font-semibold text-sm text-teal-lt hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-teal-lt rounded-md px-2 py-1"
-          >
-            Free Risk Overview
-          </Link>
-          <Link
             href="/course"
             className="bg-teal hover:bg-teal-lt text-white font-display font-bold text-xs px-4 py-2 rounded-lg tracking-wide transition-colors focus:outline-none focus:ring-2 focus:ring-teal-lt"
           >
@@ -100,14 +95,7 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <div className="pt-3 border-t border-white/10 space-y-2">
-            <Link
-              href="/free-risk-overview"
-              onClick={() => setMobileOpen(false)}
-              className="block font-body font-semibold text-sm text-teal-lt px-3 py-2 focus:outline-none"
-            >
-              Free Risk Overview
-            </Link>
+          <div className="pt-3 border-t border-white/10">
             <Link
               href="/course"
               onClick={() => setMobileOpen(false)}
