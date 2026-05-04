@@ -1,24 +1,26 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const CONVERTKIT_API_KEY = process.env.CONVERTKIT_API_KEY;
-const CONVERTKIT_FORM_ID = process.env.CONVERTKIT_FORM_ID;
 
-// RFC 5321 max email length
-const MAX_EMAIL_LEN = 254;
+// One ConvertKit form per lead magnet — set these in Cloudflare environment variables
+const FORM_IDS: Record<string, string | undefined> = {
+  "risk-overview": process.env.CONVERTKIT_FORM_ID_RISK,
+  "newsletter":    process.env.CONVERTKIT_FORM_ID_NEWSLETTER,
+};
+
+const MAX_EMAIL_LEN = 254; // RFC 5321
 const MAX_NAME_LEN  = 100;
-// Standard email format: local@domain.tld
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const EMAIL_RE      = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function sanitizeName(raw: unknown): string {
   if (typeof raw !== "string") return "";
-  // Strip angle brackets, quotes, and control characters; enforce length
   return raw.replace(/[<>"'`]/g, "").trim().slice(0, MAX_NAME_LEN);
 }
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { email, name } = body;
+    const { email, name, source } = body;
 
     if (
       !email ||
@@ -29,16 +31,18 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Valid email required" }, { status: 400 });
     }
 
-    const safeEmail = email.trim().toLowerCase();
-    const safeName  = sanitizeName(name);
+    const safeEmail  = email.trim().toLowerCase();
+    const safeName   = sanitizeName(name);
+    const safeSource = typeof source === "string" && source in FORM_IDS ? source : "newsletter";
+    const formId     = FORM_IDS[safeSource];
 
-    if (!CONVERTKIT_API_KEY || !CONVERTKIT_FORM_ID) {
-      console.warn("ConvertKit env vars not set — skipping subscription");
+    if (!CONVERTKIT_API_KEY || !formId) {
+      console.warn(`ConvertKit env vars not set for source "${safeSource}" — skipping`);
       return NextResponse.json({ success: true });
     }
 
     const res = await fetch(
-      `https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`,
+      `https://api.convertkit.com/v3/forms/${formId}/subscribe`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

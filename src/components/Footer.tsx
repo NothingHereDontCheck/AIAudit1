@@ -34,6 +34,7 @@ export default function Footer() {
               variant="inline"
               headline=""
               subhead=""
+              source="newsletter"
             />
           </div>
         </div>

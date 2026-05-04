@@ -5,11 +5,12 @@ import { useState } from "react";
 interface Props {
   headline: string;
   subhead: string;
+  source: "risk-overview" | "newsletter";
   pdfPreviewSrc?: string;
   variant?: "section" | "inline";
 }
 
-export default function LeadMagnet({ headline, subhead, pdfPreviewSrc, variant = "section" }: Props) {
+export default function LeadMagnet({ headline, subhead, source, pdfPreviewSrc, variant = "section" }: Props) {
   const [email, setEmail] = useState("");
   const [name, setName]   = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -22,7 +23,7 @@ export default function LeadMagnet({ headline, subhead, pdfPreviewSrc, variant =
       await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, name }),
+        body: JSON.stringify({ email, name, source }),
       });
     } catch {
       // Fail silently — subscription is best-effort

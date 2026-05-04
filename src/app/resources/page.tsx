@@ -136,6 +136,7 @@ export default function ResourcesPage() {
       <LeadMagnet
         headline="Download the Free AI Security Risk Overview"
         subhead="The 5 critical AI risks explained in plain language — with severity ratings, real examples, and the questions every practitioner should be asking. Free PDF, no spam."
+        source="risk-overview"
       />
 
       {/* COMING SOON */}

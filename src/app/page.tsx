@@ -211,6 +211,7 @@ export default function HomePage() {
       <LeadMagnet
         headline="Start Here: Free AI Security Risk Overview"
         subhead="Know exactly where the risks are. Zero cost. Used by 500+ security professionals to understand their AI exposure."
+        source="risk-overview"
       />
 
       {/* COURSE */}

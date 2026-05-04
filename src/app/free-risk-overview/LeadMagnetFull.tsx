@@ -25,7 +25,7 @@ export default function LeadMagnetFull() {
       await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, name }),
+        body: JSON.stringify({ email, name, source: "risk-overview" }),
       });
     } catch {
       // Fail silently — subscription is best-effort
