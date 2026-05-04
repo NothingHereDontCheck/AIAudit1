@@ -1,0 +1,9 @@
+# Redirect the .ai domain to the primary .com domain
+# Configure this in Cloudflare Pages custom domain settings:
+# aitrustaudit.ai -> aitrustaudit.com (301 redirect)
+
+# Trailing slash normalization
+/audit/    /audit    301
+/course/   /course   301
+/blog/     /blog     301
+/about/    /about    301

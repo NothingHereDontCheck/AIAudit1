@@ -1,27 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy:      #0D1B2A;
+  --teal:      #00796B;
+  --teal-lt:   #00ACC1;
+  --teal-bg:   #E0F7FA;
+  --amber:     #E65100;
+  --red:       #B71C1C;
+  --green:     #1B5E20;
+  --mid-gray:  #546E7A;
+  --light-bg:  #F0F4F8;
+  --white:     #FFFFFF;
+  --divider:   #CFD8DC;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    font-family: "Rajdhani", system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--white);
+    color: var(--mid-gray);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Orbitron", system-ui, sans-serif;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+
+  /* Skip nav for a11y */
+  .skip-nav {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 999;
+    padding: 0.5rem 1rem;
+    background: var(--teal);
+    color: #fff;
+    font-family: "Rajdhani", sans-serif;
+    text-decoration: none;
+  }
+  .skip-nav:focus {
+    left: 0;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-glow {
+    text-shadow: 0 0 24px rgba(0, 200, 255, 0.4);
+  }
+
+  .text-glow-amber {
+    text-shadow: 0 0 20px rgba(230, 81, 0, 0.5);
+  }
+
+  .font-display {
+    font-family: "Orbitron", system-ui, sans-serif;
+  }
+
+  .font-body {
+    font-family: "Rajdhani", system-ui, sans-serif;
+  }
+
+  .section-label {
+    font-family: "Orbitron", system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal-lt);
+  }
+
+  .corner-bracket::before,
+  .corner-bracket::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: var(--teal);
+    border-style: solid;
+  }
+  .corner-bracket::before {
+    top: 0;
+    left: 0;
+    border-width: 2px 0 0 2px;
+  }
+  .corner-bracket::after {
+    bottom: 0;
+    right: 0;
+    border-width: 0 2px 2px 0;
+  }
+
+  /* Risk severity accent bars */
+  .risk-critical { border-left-color: var(--red); }
+  .risk-high     { border-left-color: var(--amber); }
+  .risk-medium   { border-left-color: var(--teal-lt); }
+  .risk-low      { border-left-color: var(--green); }
+
+  .badge-critical { background-color: rgba(183,28,28,0.15); color: #EF5350; border: 1px solid rgba(183,28,28,0.4); }
+  .badge-high     { background-color: rgba(230,81,0,0.15);  color: #FF7043; border: 1px solid rgba(230,81,0,0.4); }
+  .badge-medium   { background-color: rgba(0,172,193,0.15); color: #00ACC1; border: 1px solid rgba(0,172,193,0.4); }
+  .badge-low      { background-color: rgba(27,94,32,0.15);  color: #66BB6A; border: 1px solid rgba(27,94,32,0.4); }
+
+  /* Scan-line overlay for dark hero sections */
+  .scanlines::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
   }
 }

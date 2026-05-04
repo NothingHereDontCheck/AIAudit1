@@ -9,11 +9,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        navy:      "#0D1B2A",
+        teal:      "#00796B",
+        "teal-lt": "#00ACC1",
+        "teal-bg": "#E0F7FA",
+        amber:     "#E65100",
+        "brand-red":   "#B71C1C",
+        "brand-green": "#1B5E20",
+        "mid-gray":    "#546E7A",
+        "light-bg":    "#F0F4F8",
+        divider:   "#CFD8DC",
+      },
+      fontFamily: {
+        display: ["Orbitron", "system-ui", "sans-serif"],
+        body:    ["Rajdhani", "system-ui", "sans-serif"],
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
     },
   },
   plugins: [],
 };
+
 export default config;
