@@ -1,0 +1,17 @@
+{
+  "name": "AITrustAudit.com",
+  "short_name": "AITrustAudit",
+  "description": "Securing the Intelligent Future — AI Security Auditing for SMBs",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D1B2A",
+  "theme_color": "#00796B",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

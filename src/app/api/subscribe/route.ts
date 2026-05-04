@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export const runtime = "edge";
-
 const CONVERTKIT_API_KEY = process.env.CONVERTKIT_API_KEY;
 const CONVERTKIT_FORM_ID = process.env.CONVERTKIT_FORM_ID;
 

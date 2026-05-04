@@ -1,0 +1,15 @@
+{
+  "/api/subscribe/route": "app/api/subscribe/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/blog/page": "app/blog/page.js",
+  "/free-risk-overview/page": "app/free-risk-overview/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/audit/page": "app/audit/page.js",
+  "/about/page": "app/about/page.js",
+  "/page": "app/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/course/page": "app/course/page.js"
+}
