@@ -1,15 +1,15 @@
 {
-  "/api/subscribe/route": "/api/subscribe",
   "/_not-found/page": "/_not-found",
   "/sitemap.xml/route": "/sitemap.xml",
-  "/robots.txt/route": "/robots.txt",
   "/favicon.ico/route": "/favicon.ico",
+  "/api/subscribe/route": "/api/subscribe",
+  "/robots.txt/route": "/robots.txt",
   "/blog/page": "/blog",
-  "/free-risk-overview/page": "/free-risk-overview",
-  "/blog/[slug]/page": "/blog/[slug]",
-  "/audit/page": "/audit",
   "/about/page": "/about",
   "/page": "/",
   "/privacy/page": "/privacy",
-  "/course/page": "/course"
+  "/course/page": "/course",
+  "/resources/page": "/resources",
+  "/free-risk-overview/page": "/free-risk-overview",
+  "/blog/[slug]/page": "/blog/[slug]"
 }

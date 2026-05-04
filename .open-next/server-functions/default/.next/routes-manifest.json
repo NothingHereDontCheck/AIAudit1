@@ -79,12 +79,6 @@
       "namedRegex": "^/about(?:/)?$"
     },
     {
-      "page": "/audit",
-      "regex": "^/audit(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/audit(?:/)?$"
-    },
-    {
       "page": "/blog",
       "regex": "^/blog(?:/)?$",
       "routeKeys": {},
@@ -113,6 +107,12 @@
       "regex": "^/privacy(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/privacy(?:/)?$"
+    },
+    {
+      "page": "/resources",
+      "regex": "^/resources(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/resources(?:/)?$"
     },
     {
       "page": "/robots.txt",

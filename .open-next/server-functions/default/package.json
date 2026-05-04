@@ -9,7 +9,7 @@
     "lint": "next lint",
     "pages:build": "npx opennextjs-cloudflare build",
     "preview": "npm run pages:build && npx wrangler pages dev .open-next",
-    "deploy": "npm run pages:build && npx wrangler pages deploy .open-next"
+    "deploy": "npm run pages:build && npx wrangler deploy"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.19.5",
