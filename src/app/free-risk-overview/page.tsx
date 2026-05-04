@@ -4,12 +4,12 @@ import LeadMagnetFull from "./LeadMagnetFull";
 export const metadata: Metadata = {
   title: "Free AI Security Risk Overview | AITrustAudit.com",
   description:
-    "Download the free 1-page AI Security Risk Overview — the 5 AI risks threatening your business right now. Used by security consultants to brief SMB leadership.",
+    "Download the free 1-page AI Security Risk Overview — the 5 critical AI risks every practitioner needs to understand. Free PDF, no credit card required.",
   robots: { index: true, follow: true },
   openGraph: {
     title: "Free AI Security Risk Overview",
     description:
-      "Download the free 1-page AI Security Risk Overview — used by security consultants to brief SMB leadership.",
+      "Download the free 1-page AI Security Risk Overview — the 5 critical AI risks every practitioner needs to understand.",
   },
 };
 

@@ -18,8 +18,15 @@ export default function LeadMagnet({ headline, subhead, pdfPreviewSrc, variant =
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    // TODO: wire to ConvertKit API route
-    await new Promise((r) => setTimeout(r, 800));
+    try {
+      await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, name }),
+      });
+    } catch {
+      // Fail silently — subscription is best-effort
+    }
     setSubmitted(true);
     setLoading(false);
   }

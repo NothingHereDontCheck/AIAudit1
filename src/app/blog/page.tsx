@@ -83,8 +83,8 @@ export default function BlogPage() {
       <CTABanner
         headline="Get AI Security Intel Every Week"
         subhead="The AI Trust Briefing — practitioner-level AI security news, framework updates, and field notes. No corporate fluff."
-        primaryCTA={{ label: "Download Free Risk Overview", href: "/free-risk-overview" }}
-        secondaryCTA={{ label: "See Audit Service", href: "/audit" }}
+        primaryCTA={{ label: "Browse Free Resources", href: "/resources" }}
+        secondaryCTA={{ label: "Enroll in the Course", href: "/course" }}
       />
     </>
   );

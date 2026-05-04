@@ -34,12 +34,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function renderMarkdown(content: string): string {
-  return content
-    .trim()
+  // Escape raw HTML first to prevent XSS, then apply trusted markdown transforms.
+  // Link hrefs are restricted to http/https/relative-path only — no javascript: URLs.
+  const safe = content.trim()
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
+  return safe
     .replace(/^## (.+)$/gm, '<h2 class="font-display text-navy text-2xl font-bold mt-10 mb-4">$1</h2>')
     .replace(/^### (.+)$/gm, '<h3 class="font-display text-navy text-lg font-bold mt-8 mb-3">$1</h3>')
     .replace(/\*\*(.+?)\*\*/g, '<strong class="text-navy font-semibold">$1</strong>')
-    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-teal hover:text-teal-lt underline underline-offset-2 transition-colors">$1</a>')
+    .replace(/\[(.+?)\]\(((?:https?:\/\/|\/)[^)]*)\)/g, '<a href="$2" class="text-teal hover:text-teal-lt underline underline-offset-2 transition-colors" rel="noopener noreferrer">$1</a>')
     .replace(/^- (.+)$/gm, '<li class="ml-4 text-mid-gray">$1</li>')
     .replace(/(<li.*<\/li>\n?)+/g, (match) => `<ul class="list-disc space-y-1 my-3 pl-2">${match}</ul>`)
     .replace(/\n\n/g, '</p><p class="font-body text-mid-gray text-base leading-relaxed mb-4">')
@@ -157,9 +163,9 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
             <div>
               <p className="font-display text-navy text-sm font-bold">Jamel Rainey</p>
-              <p className="font-body text-teal text-xs font-semibold mb-2">AI Security Leader · AITrustAudit.com</p>
+              <p className="font-body text-teal text-xs font-semibold mb-2">AI Security Engineer · AITrustAudit.com</p>
               <p className="font-body text-mid-gray text-sm">
-                Building the practitioner&rsquo;s resource for AI security auditing. If you have to actually do the work — not just read about it — this is your home base.
+                Building the practitioner&rsquo;s learning platform for AI security engineering. If you have to actually do the work — not just read about it — this is your home base.
               </p>
             </div>
           </div>
@@ -212,10 +218,10 @@ export default async function BlogPostPage({ params }: Props) {
       )}
 
       <CTABanner
-        headline="Ready to Audit Your AI Stack?"
-        subhead="Professional AI security audit reports starting at $499. Delivered in 5 business days."
-        primaryCTA={{ label: "Book a Free Discovery Call", href: "https://calendly.com" }}
-        secondaryCTA={{ label: "See Audit Service", href: "/audit" }}
+        headline="Ready to Build These Skills?"
+        subhead="The course walks you through every methodology covered in this article — with templates, worked examples, and a certificate."
+        primaryCTA={{ label: "Enroll in the Course", href: "/course" }}
+        secondaryCTA={{ label: "Browse Free Resources", href: "/resources" }}
       />
     </>
   );

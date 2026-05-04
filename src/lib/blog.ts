@@ -136,7 +136,7 @@ Standard and Enterprise engagements add time for additional interviews, deeper d
 
 The fastest way to understand your AI risk posture is to download the [free AI Security Risk Overview](/free-risk-overview) — it covers the five risks this guide addresses in a format you can use to brief your leadership team.
 
-If you're ready to get a professional assessment, [book a free discovery call](/audit) and we'll scope the engagement together.
+If you're ready to develop these skills yourself, [enroll in the course](/course) and work through the full methodology hands-on.
     `,
   },
   {

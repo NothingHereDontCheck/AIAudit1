@@ -21,8 +21,15 @@ export default function LeadMagnetFull() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    // TODO: POST to /api/subscribe (ConvertKit integration)
-    await new Promise((r) => setTimeout(r, 800));
+    try {
+      await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, name }),
+      });
+    } catch {
+      // Fail silently — subscription is best-effort
+    }
     setDone(true);
     setLoading(false);
   }
@@ -46,7 +53,7 @@ export default function LeadMagnetFull() {
             The 5 AI Security Risks Threatening Your Business Right Now
           </h1>
           <p className="font-body text-gray-400 text-lg mb-6 leading-relaxed">
-            A free 1-page risk overview used by security consultants to brief SMB leadership. Download instantly — no credit card, no sales call.
+            A free 1-page risk overview used by 500+ security practitioners. Download instantly — no credit card, no sales call.
           </p>
 
           {!done ? (
